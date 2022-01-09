@@ -1,45 +1,24 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { VFC, useState, useEffect } from "react";
+import "./App.css";
+import { fireStore } from "./firebase";
+import { collection, Firestore, getDocs } from "firebase/firestore/lite";
+import { Tasks } from "./type/firebase/tasks";
+import { useAllTasks } from "./hooks/useAllTasks";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: VFC = () => {
+  const { getTasks, tasks } = useAllTasks();
+
+  useEffect(() => {
+    getTasks();
+  }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
-}
+    <>
+      {tasks.map((task) => (
+        <h2>{task.title}</h2>
+      ))}
+    </>
+  );
+};
 
-export default App
+export default App;
