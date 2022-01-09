@@ -15,7 +15,7 @@ const App: VFC = () => {
   return (
     <>
       {tasks.map((task) => (
-        <h2>{task.title}</h2>
+        <p>{task.title}</p>
       ))}
     </>
   );
