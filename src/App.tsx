@@ -1,8 +1,4 @@
-import { VFC, useState, useEffect } from "react";
-import "./App.css";
-import { fireStore } from "./firebase";
-import { collection, Firestore, getDocs } from "firebase/firestore/lite";
-import { Tasks } from "./type/firebase/tasks";
+import { VFC, useEffect } from "react";
 import { useAllTasks } from "./hooks/useAllTasks";
 
 const App: VFC = () => {
