@@ -1,7 +1,7 @@
-import { collection, getDocs } from "firebase/firestore/lite";
 import { useCallback, useState } from "react";
-
 import { fireStore } from "../firebase";
+import { collection, getDocs } from "firebase/firestore/lite";
+
 import { Tasks } from "../type/firebase/tasks";
 
 export const useAllTasks = () => {
