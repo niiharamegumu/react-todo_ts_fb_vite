@@ -6,17 +6,17 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
-import { AddIcon, SearchIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 
 import { VFC, useEffect, useState, ChangeEvent } from "react";
 import { useAllTasks } from "./hooks/useAllTasks";
 
 const App: VFC = () => {
-  // const { getTasks, tasks } = useAllTasks();
+  const { getTasks, tasks } = useAllTasks();
   const [input, setInput] = useState("");
 
   useEffect(() => {
-    // getTasks();
+    getTasks();
   }, []);
   const onChangeInputText = (e: ChangeEvent<HTMLInputElement>) =>
     setInput(e.target.value);
@@ -36,9 +36,9 @@ const App: VFC = () => {
             <IconButton aria-label="Search database" icon={<AddIcon />} />
           </Flex>
         </Stack>
-        {/* {tasks.map((task) => (
-        <p key={task.id}>{task.title}</p>
-      ))} */}
+        {tasks.map((task) => (
+          <p key={task.id}>{task.title}</p>
+        ))}
       </Box>
     </ChakraProvider>
   );
