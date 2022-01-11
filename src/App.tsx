@@ -16,10 +16,9 @@ const App: VFC = () => {
   const onChangeInputText = (e: ChangeEvent<HTMLInputElement>) =>
     setInput(e.target.value);
   const onClickAddTask = useCallback(() => {
-    console.log("変更");
     addTask({ title: input });
     setInput("");
-  }, []);
+  }, [input]);
 
   return (
     <ChakraProvider>
