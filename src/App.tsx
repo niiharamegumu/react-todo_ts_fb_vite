@@ -2,8 +2,9 @@ import { ChakraProvider, Stack } from "@chakra-ui/react";
 import { VFC, useEffect, useState, ChangeEvent, useCallback } from "react";
 import { useAllTasks } from "./hooks/useAllTasks";
 
-import { InputAddField } from "./components/organisms/input/InputAddField";
+import { InputAddField } from "./components/molecules/input/InputAddField";
 import { useAddTask } from "./hooks/useAddTask";
+import { TaskCard } from "./components/organisms/task/TaskCard";
 
 const App: VFC = () => {
   const { getTasks, tasks } = useAllTasks();
@@ -31,7 +32,7 @@ const App: VFC = () => {
         />
         <Stack spacing={4}>
           {tasks.map((task) => (
-            <p key={task.id}>{task.title}</p>
+            <TaskCard key={task.id} id={task.id} title={task.title} />
           ))}
         </Stack>
       </Stack>

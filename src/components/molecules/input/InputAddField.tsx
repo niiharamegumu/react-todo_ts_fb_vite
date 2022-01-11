@@ -1,6 +1,7 @@
 import { ChangeEvent, memo, VFC } from "react";
 import { AddIcon } from "@chakra-ui/icons";
-import { Flex, IconButton, Input } from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
+import { InputField } from "../../atoms/input/InputField";
 
 type Props = {
   placeholder: string;
@@ -13,15 +14,7 @@ export const InputAddField: VFC<Props> = memo((props) => {
   const { placeholder, input, onChange, onClick } = props;
   return (
     <Flex gap={2} justify="center">
-      <Input
-        w={["100%", "100%", "50%"]}
-        value={input}
-        placeholder={placeholder}
-        p="1em"
-        variant="flushed"
-        onChange={onChange}
-        size="md"
-      />
+      <InputField placeholder={placeholder} input={input} onChange={onChange} />
       <IconButton
         aria-label="Search database"
         icon={<AddIcon />}
