@@ -23,8 +23,10 @@ export const TaskCard: VFC<Tasks> = (props) => {
   };
   return (
     <Box>
-      <Flex align="center" justify="space-between">
-        <Text>{title}</Text>
+      <Flex align="center" justify="center" gap={10}>
+        <Text textAlign="left" w="30%">
+          {title}
+        </Text>
         <Flex align="center">
           <InputField
             placeholder="Edit Tasks ..."
