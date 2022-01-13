@@ -6,6 +6,7 @@ import { Tasks } from "../../../type/firebase/tasks";
 import { InputField } from "../../atoms/input/InputField";
 import { useEditTask } from "../../../hooks/useEditTask";
 import { useDeleteTask } from "../../../hooks/useDeleteTask";
+import { TextToLink } from "../../atoms/parser/TextToLink";
 
 export const TaskCard: VFC<Tasks> = (props) => {
   const { id, title } = props;
@@ -29,15 +30,16 @@ export const TaskCard: VFC<Tasks> = (props) => {
         gap={{ base: 2, sm: 10 }}
         flexDirection={{ base: "column", sm: "row" }}
       >
-        <Text
+        <Box
           textAlign="center"
           w={{ base: "100%", sm: "40%" }}
-          p={2}
+          p={8}
           borderRadius={50}
           backgroundColor="white"
+          wordBreak="break-all"
         >
-          {title}
-        </Text>
+          <TextToLink>{title}</TextToLink>
+        </Box>
         <Flex align="center">
           <InputField
             placeholder="Edit Tasks ..."

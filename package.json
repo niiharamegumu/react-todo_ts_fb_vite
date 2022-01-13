@@ -13,6 +13,8 @@
     "@emotion/styled": "^11.6.0",
     "firebase": "^9.6.2",
     "framer-motion": "^5.5.6",
+    "linkify-react": "^3.0.4",
+    "linkifyjs": "^3.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"
