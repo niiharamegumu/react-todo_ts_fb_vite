@@ -19,7 +19,7 @@ export const Header: VFC = memo(() => {
   }, [navigete]);
   return (
     <Flex justify="space-between" align="center" p="1em 2em">
-      <Heading fontSize="3xl">TODO App.</Heading>
+      <Heading fontSize={{ base: "6vw", sm: "3xl" }}>TODO</Heading>
       <PrimaryButton disabled={false} onClick={logout}>
         LogOut
       </PrimaryButton>

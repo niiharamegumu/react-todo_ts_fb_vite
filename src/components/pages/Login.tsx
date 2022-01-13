@@ -57,9 +57,9 @@ export const Login = memo((props: any) => {
     <Flex w="100vw" h="100vh" justify="center" align="center">
       <Stack
         backgroundColor="white"
-        p="2em 3em"
+        p={{ base: "30px 20px", sm: "20px 30px" }}
         borderRadius={20}
-        w="sm"
+        w={{ base: "90%", sm: "sm" }}
         spacing={6}
       >
         <Heading fontSize="2xl" textAlign="center">
@@ -91,14 +91,15 @@ export const Login = memo((props: any) => {
         >
           {isLogin ? "Login" : "Register"}
         </PrimaryButton>
-        <Text
+        {/* セキュリティ上、誰でもログインできないようにするため */}
+        {/* <Text
           as="span"
           cursor="pointer"
           textAlign="center"
           onClick={() => setIsLogin(!isLogin)}
         >
           {isLogin ? "Create New Account ?" : "Login ?"}
-        </Text>
+        </Text> */}
       </Stack>
     </Flex>
   );

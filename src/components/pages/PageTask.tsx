@@ -36,7 +36,7 @@ export const PageTask: VFC = memo(() => {
         onChange={onChangeInputText}
         onClick={onClickAddTask}
       />
-      <Stack spacing={4}>
+      <Stack spacing={{ base: 10, sm: 4 }}>
         {tasks.map((task) => (
           <TaskCard key={task.id} id={task.id} title={task.title} />
         ))}

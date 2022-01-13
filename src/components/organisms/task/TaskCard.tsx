@@ -23,8 +23,19 @@ export const TaskCard: VFC<Tasks> = (props) => {
   };
   return (
     <Box>
-      <Flex align="center" justify="center" gap={10}>
-        <Text textAlign="left" w="30%">
+      <Flex
+        align="center"
+        justify="center"
+        gap={{ base: 2, sm: 10 }}
+        flexDirection={{ base: "column", sm: "row" }}
+      >
+        <Text
+          textAlign="center"
+          w={{ base: "100%", sm: "40%" }}
+          p={2}
+          borderRadius={50}
+          backgroundColor="white"
+        >
           {title}
         </Text>
         <Flex align="center">
